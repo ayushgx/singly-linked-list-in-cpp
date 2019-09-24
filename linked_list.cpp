@@ -103,7 +103,25 @@ class list{
             delete cur;
         }
         
-    
+        //zero based index
+        void search(int x){
+            int pos = 0;
+            int flag = 0;
+            node *temp;
+            temp = head;
+
+            while(temp != NULL){
+                if (temp->data==x){
+                    cout<<"Element found at node index: "<<pos;
+                    flag=1;
+                } else {
+                    pos++;    
+                }
+                temp = temp->next;
+            }
+            if(flag==0) cout<<"Element not found!";
+            cout<<"\n";
+        }
 };
 
 int main(){
@@ -131,6 +149,8 @@ int main(){
     
     obj.delLast();
     obj.display();
+  
+    obj.search(4);
     
     return 0;
 }
